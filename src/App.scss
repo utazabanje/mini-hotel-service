@@ -1,61 +1,80 @@
-@import './assets/colors';
+@import './assets/scss/colors';
 
 body {
   background-color: $main-color;
-}
 
-.navigation-bar {
-  background-color: $main-color;
-  border-bottom: 1px solid $second-color;
-  
-  .navbar-brand {
-    color: #fff;
+  .btn.btn-light {
+    background-color: $second-color;
+    color: $white-website-color;
+    border-color: $second-color;
+
+    &:hover {
+      background-color: $white-website-color;
+      color: $black-website-color;
+      border-color: $main-color;
+    }
   }
 
-  .navbar-collapse {
+  .navigation-bar {
+    background-color: $main-color;
+    border-bottom: 1px solid $second-color;
+    
+    .navbar-brand {
+      color: #fff;
+    }
 
-    .navbar-nav {
-      text-align: center;
+    .navbar-collapse {
 
-      .nav-item {
+      .navbar-nav {
+        text-align: center;
 
-        .nav-link {
-          color: $white-website-color;
-  
-          &:hover {
-            color: $black-website-color;
+        .nav-item {
+
+          .nav-link {
+            color: $white-website-color;
+    
+            &:hover {
+              color: $black-website-color;
+            }
           }
         }
       }
     }
   }
-}
 
-.welcome-page {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  .welcome-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
-    .welcome-title {
-      color: $gray-website-color;
-    }
-
-    .welcome-subtitle {
-      color: $black-website-color;
-    }
-
-    .btn.btn-light {
-      background-color: $second-color;
-      color: $white-website-color;
-      border-color: $second-color;
-
-      &:hover {
-        background-color: $white-website-color;
-        color: $black-website-color;
-        border-color: $main-color;
+      .welcome-title {
+        color: $gray-website-color;
       }
-    }
-}
 
+      .welcome-subtitle {
+        color: $black-website-color;
+      }
+  }
+
+  .staff-login-page {
+    
+
+    .staff-login-page-title {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .staff-login-page-subtitle {
+      text-align: center;
+    }
+
+    .staff-login-form {
+      padding-top: 50px;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}

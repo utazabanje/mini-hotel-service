@@ -3,27 +3,29 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Welcome from './pages/Welcome/Welcome';
 import CheckIn from './pages/CheckIn/Checkin';
-import StaffLogin from './pages/StaffLogin/StaffLogin';
-import MenageGuest from './pages/ManageGuests/ManageGuests';
+import Staff from './pages/Staff/Staff';
+import ManageGuest from './components/ManageGuests/ManageGuests';
 import Layout from './components/Layout/Layout';
 import NavigationBar from './components/NavBar/NavBar';
+import * as ROUTES from './constants/routes';
 
 class App extends Component {
 
   render() {
     return (
       <React.Fragment>
-        <NavigationBar />
-        <Layout>
           <Router>
-            <Switch>
-              <Route exact path="/" component={Welcome} />
-              <Route path="/checkin" component={CheckIn} />
-              <Route path="/login" component={StaffLogin} />
-              <Route path="/menage" component={MenageGuest} />
-            </Switch>
+          <NavigationBar />
+          <Layout>
+              <Switch>
+                <Route exact path={ROUTES.WELCOME} component={Welcome} />
+                <Route path={ROUTES.CHECK_IN} component={CheckIn} />
+                <Route path={ROUTES.STAFF} component={Staff} />
+                <Route path={ROUTES.MANAGE} component={ManageGuest} />
+              </Switch>
+            </Layout>
           </Router>
-        </Layout>
+        
       </React.Fragment>
     )
   }
