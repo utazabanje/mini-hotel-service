@@ -12,7 +12,6 @@ const NavigationBar = () => {
                 <Nav className="ml-auto">
                     <Nav.Item><Nav.Link href={ROUTES.WELCOME}>Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href={ROUTES.STAFF}>For Staff</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href={ROUTES.MANAGE}>Manage Guest</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

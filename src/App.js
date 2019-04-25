@@ -21,7 +21,7 @@ class App extends Component {
                 <Route exact path={ROUTES.WELCOME} component={Welcome} />
                 <Route path={ROUTES.CHECK_IN} component={CheckIn} />
                 <Route path={ROUTES.STAFF} component={Staff} />
-                <Route path={ROUTES.MANAGE} component={ManageGuest} />
+                <Route component={ManageGuest} />
               </Switch>
             </Layout>
           </Router>
