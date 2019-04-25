@@ -7,6 +7,7 @@ class CheckIn extends Component {
     super(props);
 
     this.state = {
+      guests: [],
       currentName: '',
       currentLastName: '',
       currentEmail: '',

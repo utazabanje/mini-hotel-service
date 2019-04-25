@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Fire from "../../config/FirebaseLogin";
 import { Button } from "react-bootstrap";
+import GuestList from "./ManageGuestList";
 
 class ManageGuest extends Component {
 	constructor(props) {
@@ -19,7 +20,6 @@ class ManageGuest extends Component {
 
 		guestsRef.on("value", snapshot => {
 			let guests = snapshot.val();
-			console.log(guests);
 			let newGuestState = [];
 			for (let guest in guests) {
 				newGuestState.push({
@@ -55,32 +55,23 @@ class ManageGuest extends Component {
 					Log Out
 				</Button>
 
-				<div>
-					{this.state.guests.map(guest => {
+				
+				
+					{this.state.guests.map((guest, idx) => {
 						return (
 							<React.Fragment>
-								<p>
-									{guest.name} | {guest.id}
-								</p>
-								<p>
-									{guest.lastname} | {guest.id}
-								</p>
-								<p>
-									{guest.email} | {guest.id}
-								</p>
-								<p>
-									{guest.address} | {guest.id}
-								</p>
-								<p>
-									{guest.city} | {guest.id}
-								</p>
-								<p>
-									{guest.zip} | {guest.id}
-								</p>
+								<GuestList 
+									guestKey={idx}
+									name={guest.name}
+									lastname={guest.lastname}
+									email={guest.email}
+									address={guest.address}
+									city={guest.city}
+									zip={guest.zip}
+								/>
 							</React.Fragment>
 						);
 					})}
-				</div>
 			</div>
 		);
 	}
