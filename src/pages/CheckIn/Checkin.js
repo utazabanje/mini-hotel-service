@@ -13,7 +13,7 @@ class CheckIn extends Component {
       currentEmail: '',
       currentAddress: '',
       currentCity: '',
-      // currentDate: new Date,
+      currentDate: Date.now(),
       currentZip: '',
     };
   }
@@ -35,17 +35,17 @@ class CheckIn extends Component {
       address: this.state.currentAddress,
       city: this.state.currentCity,
       zip: this.state.currentZip,
-      // date: this.state.currentDate,
+      date: this.state.currentDate,
     }
     guestsRef.push(guest);
-    console.log(guest);
+    
     this.setState({
       currentName: '',
       currentLastName: '',
       currentEmail: '',
       currentAddress: '',
       currentCity: '',
-      // currentDate: new Date,
+      currentDate: Date.now(),
       currentZip: '',
     });
   }

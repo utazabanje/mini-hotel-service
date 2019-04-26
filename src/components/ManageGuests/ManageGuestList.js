@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 
 const GuestList = props => {
+
 	return (
 		<React.Fragment>
 			<Card>
@@ -10,10 +11,11 @@ const GuestList = props => {
 					<Card.Title>
 						{props.name} {props.lastname}
 					</Card.Title>
-					<Card.Text>Email: {props.email}</Card.Text>
-					<Card.Text>Address: {props.address}</Card.Text>
-					<Card.Text>City: {props.city}</Card.Text>
-					<Card.Text>Zip: {props.zip}</Card.Text>
+					<Card.Text>Email: <span>{props.email}</span></Card.Text>
+					<Card.Text>Address: <span>{props.address}</span></Card.Text>
+					<Card.Text>City: <span>{props.city}</span></Card.Text>
+					<Card.Text>Zip: <span>{props.zip}</span></Card.Text>
+          <Card.Text>Check In Date: <span>{props.date}</span></Card.Text>
           <Button
             onClick={props.onRemove}
             variant="danger">X</Button>
