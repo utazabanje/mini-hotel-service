@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Fire from "../../config/FirebaseLogin";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import GuestList from "./ManageGuestList";
 
 class ManageGuest extends Component {
@@ -10,7 +10,7 @@ class ManageGuest extends Component {
 		this._isMounted = false;
 
 		this.state = {
-			guests: []
+			guests: [],
 		};
 	}
 
@@ -42,36 +42,46 @@ class ManageGuest extends Component {
 		this._isMounted = false;
 	}
 
+	removeGuest(guestId) {
+		const guestRef = Fire.database().ref(`/guests/${guestId}`);
+		guestRef.remove();
+	}
+
 	logout = () => {
 		Fire.auth().signOut();
 	};
 
 	render() {
 		return (
-			<div>
-				<h1>Menage guest page</h1>
+			<div className="manage-guests-page">
+				<h1 className="manage-guests-title">Manage guest page</h1>
 
-				<Button onClick={this.logout} variant="light">
-					Log Out
-				</Button>
+					<Button onClick={this.logout} variant="light">
+						Log Out
+					</Button>
 
 				
-				
+					{this._isMounted ? null : 
+						<Spinner animation="border" variant="light" />
+					}
+					<div className="card-wrapper">
 					{this.state.guests.map((guest, idx) => {
 						return (
-							<React.Fragment>
-								<GuestList 
-									guestKey={idx}
+							<React.Fragment key={idx}>
+								<GuestList
 									name={guest.name}
 									lastname={guest.lastname}
 									email={guest.email}
 									address={guest.address}
 									city={guest.city}
 									zip={guest.zip}
+									onRemove={() => this.removeGuest(guest.id)}
 								/>
 							</React.Fragment>
 						);
 					})}
+					<div className="clearfix"></div>
+					</div>
 			</div>
 		);
 	}

@@ -15,6 +15,10 @@ body {
     }
   }
 
+  .clearfix {
+    clear: both;
+  }
+
   .navigation-bar {
     background-color: $main-color;
     border-bottom: 1px solid $second-color;
@@ -75,6 +79,50 @@ body {
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
+    }
+  }
+
+  .manage-guests-page {
+    position: relative;
+    height: 100vh;
+
+    .manage-guests-title {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .btn.btn-light {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .spinner-border {
+      border-width: 8px;
+      position: absolute;
+      top: 35%;
+      left: 45%;
+    }
+
+    .text-light {
+      width: 100px;
+      height: 100px;
+    }
+
+    .card-wrapper {
+
+
+      .card {
+        width: calc(50% - 40px);
+        margin: 20px;
+        float: left;
+
+        .btn.btn-danger {
+          position: absolute;
+          top: 2px;
+          right: 2px;
+        }
+      }
     }
   }
 }
