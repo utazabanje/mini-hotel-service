@@ -3,12 +3,12 @@
 This is Mini Hotel Service where new guest can check in and staff members can log in and manage all the guests.
 
 ### Technologies
-#####For development:
+##### For development:
 * React
 * Firebase (for storing data and staff member log in)
 * React-Bootstrap
 
-#####For testing:
+##### For testing:
 * Jest
 * Enzyme
 
