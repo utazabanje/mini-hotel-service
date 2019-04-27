@@ -4,9 +4,10 @@ This is Mini Hotel Service where new guest can check in and staff members can lo
 
 ### Technologies
 ##### For development:
-* React
-* Firebase (for storing data and staff member log in)
-* React-Bootstrap
+* [React](https://reactjs.org/)
+* [Firebase](https://firebase.google.com/)  - (for storing data and staff member log in)
+* [React-Bootstrap](https://react-bootstrap.github.io/)
+* [SASS](https://sass-lang.com/)
 
 ##### For testing:
 * Jest
@@ -24,10 +25,6 @@ To run the project:
 ```
 $ npm start
 ```
-If you want to run tests:
-```
-$ npm test
-```
 Because I use Firebase in this project, config file will look like this
 ```
 apiKey: process.env.REACT_APP_API_KEY,
@@ -39,8 +36,17 @@ messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 ```
 so be sure to include .env file I have sent you if you don't want to create your own firebase project.
 
-The credentials for staff members to log in are:
+If you end up using my firebase config, on staff member login page, you can use this credentials to log in:
 ```
 email: staff@hotel.com
 password: staff123
 ```
+
+### Test application
+Example tests are located in `App.test.js` file.
+To run it just type:
+```
+$ npm test
+```
+
+

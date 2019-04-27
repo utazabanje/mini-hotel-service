@@ -68,6 +68,12 @@ body {
       .welcome-subtitle {
         color: $black-website-color;
       }
+
+      @media screen and (max-width: $mobile-size) {
+        .welcome-title {
+          font-size: 26px;
+        }
+      }
   }
   // WELCOME PAGE END
 
@@ -89,6 +95,12 @@ body {
       width: 100%;
       max-width: 500px;
       margin: 0 auto;
+    }
+
+    @media screen and (max-width: $mobile-size) {
+      .staff-login-form {
+        padding-top: 30px;
+      }
     }
   }
   // STAFF PAGE END
@@ -188,7 +200,9 @@ body {
     }
 
     @media screen and (max-width: $mobile-size) {
-      
+      .manage-guests-title {
+        font-size: 30px;
+      }
       .datepicker-title {
         padding-left: 0;
       }
