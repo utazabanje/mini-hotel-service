@@ -5,7 +5,7 @@ exports[`Manage Guest snapshot Snapshot 1`] = `
   className="manage-guests-page"
 >
   <button
-    className="btn btn-light"
+    className="logout-btn btn btn-light"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -21,7 +21,7 @@ exports[`Manage Guest snapshot Snapshot 1`] = `
     className="spinner-border text-light"
   />
   <p
-    class="datepicker-title"
+    className="datepicker-title"
   >
     Pick a date:
   </p>

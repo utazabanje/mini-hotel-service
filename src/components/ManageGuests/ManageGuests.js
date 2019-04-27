@@ -66,7 +66,7 @@ class ManageGuest extends Component {
 	render() {
 		return (
 			<div className="manage-guests-page">
-				<Button onClick={this.logout} variant="light">
+				<Button className="logout-btn" onClick={this.logout} variant="light">
 					Log Out
 				</Button>
 				<h1 className="manage-guests-title">Manage guest page</h1>
