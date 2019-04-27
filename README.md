@@ -1,17 +1,17 @@
 ## Mini Hotel Service
 
-This is Mini Hotel Service where new guest can check in and staff members can log in and manage all the guests.
+This is Mini Hotel Service where new guest can check in and staff members can log in and manage all the guests (filter them by date or delete them).
 
-### Technologies
+### Technologies used
 ##### For development:
 * [React](https://reactjs.org/)
-* [Firebase](https://firebase.google.com/)  - (for storing data and staff member log in)
+* [Firebase](https://firebase.google.com/)  - (for storing data and simple staff member log in)
 * [React-Bootstrap](https://react-bootstrap.github.io/)
 * [SASS](https://sass-lang.com/)
 
 ##### For testing:
-* Jest
-* Enzyme
+* [Jest](https://jestjs.io/)
+* [Enzyme](https://airbnb.io/enzyme/)
 
 ### Setup
 To run this project you will have to do the following:
@@ -36,7 +36,7 @@ messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 ```
 so be sure to include .env file I have sent you if you don't want to create your own firebase project.
 
-If you end up using my firebase config, on staff member login page, you can use this credentials to log in:
+If you end up using my firebase config, on staff member login page, you can use this credentials to log in and list all checked in guests:
 ```
 email: staff@hotel.com
 password: staff123
