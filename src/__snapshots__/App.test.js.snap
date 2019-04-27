@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Manage Guest snapshot Snapshot 1`] = `
+<div
+  className="manage-guests-page"
+>
+  <button
+    className="btn btn-light"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Log Out
+  </button>
+  <h1
+    className="manage-guests-title"
+  >
+    Manage guest page
+  </h1>
+  <div
+    className="spinner-border text-light"
+  />
+  <p
+    class="datepicker-title"
+  >
+    Pick a date:
+  </p>
+  <div
+    className="react-datepicker-wrapper"
+  >
+    <div
+      className="react-datepicker__input-container"
+    >
+      <input
+        className=""
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        readOnly={false}
+        type="text"
+        value="04/27/2019"
+      />
+    </div>
+  </div>
+  <div
+    className="card-wrapper"
+  >
+    <div
+      className="clearfix"
+    />
+  </div>
+</div>
+`;

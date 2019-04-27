@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import fire from "../../config/FirebaseLogin";
-import MenageGuest from "../ManageGuests/ManageGuests";
 import { Form, Button } from "react-bootstrap";
 import Fire from "../../config/FirebaseLogin";
 

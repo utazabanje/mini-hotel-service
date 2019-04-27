@@ -1,7 +1,14 @@
 @import './assets/scss/colors';
+@import './assets/scss/responsive_media';
 
 body {
   background-color: $main-color;
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
 
   .btn.btn-light {
     background-color: $second-color;
@@ -46,6 +53,7 @@ body {
     }
   }
 
+  // WELCOME PAGE START
   .welcome-page {
     position: absolute;
     top: 50%;
@@ -61,7 +69,9 @@ body {
         color: $black-website-color;
       }
   }
+  // WELCOME PAGE END
 
+  // STAFF PAGE START
   .staff-login-page {
     
 
@@ -81,7 +91,27 @@ body {
       margin: 0 auto;
     }
   }
+  // STAFF PAGE END
 
+  .checkin-page {
+    
+    .checkin-page-title {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    form {
+      padding: 30px 0;
+    }
+
+    @media screen and (max-width: $mobile-size) {
+      form {
+        padding-top: 0;
+      }
+    }
+  }
+
+  // MANAGE GUESTS PAGE START
   .manage-guests-page {
     position: relative;
     height: 100vh;
@@ -122,7 +152,6 @@ body {
 
     .card-wrapper {
 
-
       .card {
         width: calc(50% - 40px);
         margin: 20px;
@@ -146,6 +175,27 @@ body {
           }
         }
       }
+
+      @media screen and (max-width: $mobile-size) {
+      
+        .card {
+          width: 100%;
+          float: none;
+          margin: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobile-size) {
+      
+      .datepicker-title {
+        padding-left: 0;
+      }
+      .react-datepicker-wrapper {
+        padding-left: 0;
+      }
     }
   }
+  // MANAGE GUESTS PAGE END
 }

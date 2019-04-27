@@ -75,7 +75,7 @@ class ManageGuest extends Component {
 					<Spinner animation="border" variant="light" />
 				)}
 
-				<p class="datepicker-title">Pick a date:</p>
+				<p className="datepicker-title">Pick a date:</p>
 				<DatePicker
 					selected={this.state.startDate}
 					onChange={this.handleChange}
