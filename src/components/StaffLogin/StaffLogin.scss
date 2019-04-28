@@ -1,0 +1,29 @@
+@import './assets/scss/colors';
+@import './assets/scss/responsive_media';
+
+.staff-login-page {
+    
+
+  .staff-login-page-title {
+    margin-top: 30px;
+    text-align: center;
+    color: $green-website-color;
+  }
+
+  .staff-login-page-subtitle {
+    text-align: center;
+  }
+
+  .staff-login-form {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: $mobile-size) {
+    .staff-login-form {
+      padding-top: 30px;
+    }
+  }
+}

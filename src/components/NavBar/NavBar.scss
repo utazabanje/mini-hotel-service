@@ -1,0 +1,28 @@
+@import './assets/scss/colors';
+
+.navigation-bar {
+  background-color: $main-color;
+  border-bottom: 1px solid $second-color;
+  
+  .navbar-brand {
+    color: $green-website-color;
+  }
+
+  .navbar-collapse {
+
+    .navbar-nav {
+      text-align: center;
+
+      .nav-item {
+
+        .nav-link {
+          color: $green-website-color;
+  
+          &:hover {
+            color: $black-website-color;
+          }
+        }
+      }
+    }
+  }
+}

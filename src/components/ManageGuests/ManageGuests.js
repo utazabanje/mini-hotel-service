@@ -3,6 +3,7 @@ import Fire from "../../config/FirebaseLogin";
 import { Button, Spinner } from "react-bootstrap";
 import GuestList from "./ManageGuestList";
 import DatePicker from "react-datepicker";
+import moment from 'moment';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,7 +15,9 @@ class ManageGuest extends Component {
 
 		this.state = {
 			guests: [],
-			startDate: new Date()
+			startDate: new Date(),
+			filterByDate: false,
+			appliedFilter: false,
 		};
 	}
 
@@ -37,6 +40,7 @@ class ManageGuest extends Component {
 					date: guests[guest].date
 				});
 			}
+			newGuestState.sort((a, b) => b.date - a.date)
 			this._isMounted &&
 				this.setState({
 					guests: newGuestState
@@ -63,27 +67,57 @@ class ManageGuest extends Component {
 		});
 	};
 
+	onHandleFilter = () => {
+		this.setState({
+			filterByDate: true,
+			appliedFilter: true,
+		})
+	}
+
+	onHandleCancelFilter = () => {
+		this.setState({
+			filterByDate: false,
+			appliedFilter: false,
+			// clear datepicker value
+		})
+	}
+
 	render() {
+		let guests = this.state.guests;
+
+		if(this.state.filterByDate) {
+			guests = guests.filter(guest => moment(guest.date).format('YYYY-MM-DD') === moment(this.state.startDate).format('YYYY-MM-DD'));
+
+		}
+		
+
 		return (
 			<div className="manage-guests-page">
+				{this._isMounted ? null : (
+					<Spinner animation="border" variant="light" />
+				)}
+
 				<Button className="logout-btn" onClick={this.logout} variant="light">
 					Log Out
 				</Button>
 				<h1 className="manage-guests-title">Manage guest page</h1>
 
-				{this._isMounted ? null : (
-					<Spinner animation="border" variant="light" />
-				)}
+				<div className="datepicker-filter-wrapper">
+					<p className="datepicker-title">Pick a date:</p>
+					<DatePicker
+						selected={this.state.startDate}
+						onChange={this.handleChange}
+					/>
 
-				<p className="datepicker-title">Pick a date:</p>
-				<DatePicker
-					selected={this.state.startDate}
-					onChange={this.handleChange}
-				/>
+					<div className="filter-wrapper">
+						<Button onClick={this.onHandleFilter} className={this.state.appliedFilter ? 'applied' : 'btn-apply-filter' } variant="primary">Apply Filter</Button>
+						<Button onClick={this.onHandleCancelFilter} variant="danger btn-show-all">Show all guests</Button>
+					</div>
+				</div>
 
 				<div className="card-wrapper">
-					{this.state.guests.filter(guest => guest.date <= this.state.startDate).map((guest, idx) => {
-
+					{guests.map((guest, idx) => {
+						
 							const dateOptions = {
 								year: "numeric",
 								month: "2-digit",

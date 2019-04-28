@@ -15,7 +15,6 @@ class CheckIn extends Component {
       currentCity: '',
       currentDate: Date.now(),
       currentZip: '',
-      validated: false,
     };
   }
 
@@ -25,15 +24,9 @@ class CheckIn extends Component {
       [e.target.name]: e.target.value
     });
   }
-
+ 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    const form = e.currentTarget;
-    if(form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
 
     const guestsRef = Fire.database().ref('guests');
     const guest = {
@@ -55,20 +48,16 @@ class CheckIn extends Component {
       currentCity: '',
       currentDate: Date.now(),
       currentZip: '',
-      validated: true,
     });
   }
 
   render() {
-    const { validated } = this.state;
     return (
       <div className="checkin-page">
         <h1 className="checkin-page-title">Check In</h1>
 
-        <Form className="checkin-login-form" 
-          noValidate
-          validated={validated}
-          onSubmit={e => this.handleSubmit(e)}>
+        <Form className="checkin-login-form"
+          onSubmit={this.handleSubmit}>
           <Form.Row>
             <Form.Group as={Col} sm="12" md="6" controlId="validateName">
               <Form.Label>First Name</Form.Label>

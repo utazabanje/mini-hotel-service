@@ -1,0 +1,21 @@
+@import './assets/scss/colors';
+@import './assets/scss/responsive_media';
+
+.checkin-page {
+    
+  .checkin-page-title {
+    text-align: center;
+    margin: 30px 0;
+    color: $green-website-color;
+  }
+
+  form {
+    padding: 30px 0;
+  }
+
+  @media screen and (max-width: $mobile-size) {
+    form {
+      padding-top: 0;
+    }
+  }
+}

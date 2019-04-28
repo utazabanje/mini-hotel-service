@@ -1,0 +1,115 @@
+@import "./assets/scss/colors";
+@import "./assets/scss/responsive_media";
+
+.manage-guests-page {
+	position: relative;
+	height: 100vh;
+
+	.datepicker-title {
+		margin-bottom: 0;
+		padding-left: 20px;
+		color: $green-website-color;
+	}
+
+	.react-datepicker-wrapper {
+		width: 100%;
+		margin-bottom: 20px;
+		padding-left: 20px;
+	}
+
+	.filter-wrapper {
+		padding-left: 20px;
+
+		.btn {
+			margin-right: 20px;
+		}
+
+		.btn-apply-filter {
+			background-color: transparent;
+			border-color: $green-website-color;
+			color: $green-website-color;
+		}
+
+		.applied {
+			background-color: $second-color;
+			border-color: $second-color;
+			color: $white-website-color;
+		}
+
+		.btn.btn-show-all {
+			background-color: $green-website-color;
+			border-color: $green-website-color;
+		}
+	}
+
+	.manage-guests-title {
+		text-align: center;
+		margin: 30px 0;
+		color: $green-website-color;
+	}
+
+	.btn.btn-light {
+		display: block;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	.spinner-border {
+		border-width: 8px;
+		position: absolute;
+		top: 35%;
+		left: 45%;
+	}
+
+	.text-light {
+		width: 100px;
+		height: 100px;
+	}
+
+	.card-wrapper {
+		.card {
+			width: calc(50% - 40px);
+			margin: 20px;
+			float: left;
+
+			.btn.btn-danger {
+				position: absolute;
+				top: 2px;
+				right: 2px;
+			}
+
+			.card-text {
+				font-size: 13px;
+				color: gray;
+
+				span {
+					display: block;
+					font-size: 15px;
+					font-weight: 500;
+					color: $black-website-color;
+				}
+			}
+		}
+
+		@media screen and (max-width: $mobile-size) {
+			.card {
+				width: 100%;
+				float: none;
+				margin: 0;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	@media screen and (max-width: $mobile-size) {
+		.manage-guests-title {
+			font-size: 30px;
+		}
+		.datepicker-title {
+			padding-left: 0;
+		}
+		.react-datepicker-wrapper {
+			padding-left: 0;
+		}
+	}
+}
