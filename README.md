@@ -14,7 +14,7 @@ This is Mini Hotel Service where new guest can check in and staff members can lo
 * [Enzyme](https://airbnb.io/enzyme/)
 
 ### Setup
-To run this project you will have to do the following:
+To setup this project you will have to do the following:
 
 ```
 $ git clone https://github.com/utazabanje/mini-hotel-service.git
