@@ -21,10 +21,6 @@ $ git clone https://github.com/utazabanje/mini-hotel-service.git
 $ cd mini-hotel-service
 $ npm install
 ```
-To run the project:
-```
-$ npm start
-```
 Because I use Firebase in this project, config file will look like this
 ```
 apiKey: process.env.REACT_APP_API_KEY,
@@ -41,12 +37,24 @@ If you end up using my firebase config, on staff member login page, you can use 
 email: staff@hotel.com
 password: staff123
 ```
+### Run project:
+To run project after inserting .env file run this command:
+```
+$ npm start
+```
+
 
 ### Test application
 Example tests are located in `App.test.js` file.
 To run it just type:
 ```
 $ npm test
+```
+
+### Buld project
+To build mini-hotel-service simply write:
+```
+$ npm run build
 ```
 
 
