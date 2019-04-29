@@ -17,7 +17,6 @@ class ManageGuest extends Component {
 			guests: [],
 			startDate: new Date(),
 			filterByDate: false,
-			appliedFilter: false,
 		};
 	}
 
@@ -70,14 +69,12 @@ class ManageGuest extends Component {
 	onHandleFilter = () => {
 		this.setState({
 			filterByDate: true,
-			appliedFilter: true,
 		})
 	}
 
 	onHandleCancelFilter = () => {
 		this.setState({
 			filterByDate: false,
-			appliedFilter: false,
 			// clear datepicker value
 		})
 	}
@@ -110,7 +107,7 @@ class ManageGuest extends Component {
 					/>
 
 					<div className="filter-wrapper">
-						<Button onClick={this.onHandleFilter} className={this.state.appliedFilter ? 'applied' : 'btn-apply-filter' } variant="primary">Apply Filter</Button>
+						<Button onClick={this.onHandleFilter} className={this.state.filterByDate ? 'applied' : 'btn-apply-filter' } variant="primary">Apply Filter</Button>
 						<Button onClick={this.onHandleCancelFilter} variant="danger btn-show-all">Show all guests</Button>
 					</div>
 				</div>

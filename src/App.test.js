@@ -7,27 +7,28 @@ import Adapter from 'enzyme-adapter-react-16';
 import ManageGuest from './components/ManageGuests/ManageGuests';
 import Staff from './pages/Staff/Staff';
 import CheckIn from './pages/CheckIn/Checkin';
+import GuestList from './components/ManageGuests/ManageGuestList';
 
 configure({adapter: new Adapter()});
 
-describe('Manage Guest component with guests as empty string', () => {
-  it('should return 0', () => {
+describe('Manage Guest Component', () => {
+  it('Manage Guest component with guests as empty string should return 0', () => {
     const wrapper = shallow(<ManageGuest />);
     const guestState = wrapper.state().guests;
     expect(guestState.length).toEqual(0);
   });
 });
 
-describe('Manage Guest snapshot', () => {
-  it('Snapshot', () => {
+describe('Manage Guest Component', () => {
+  it('Manage Guest snapshot', () => {
     const tree = renderer.create(<ManageGuest />).toJSON();
     
     expect(tree).toMatchSnapshot();
   });
 });
 
-describe('Staff component should render Manage component if user is signed in', () => {
-  it('One Manage Component', () => {
+describe('Staff Component', () => {
+  it('Staff component should render Manage component if user is signed in', () => {
     const wrapper = shallow(<Staff />);
     const numOfComponents = wrapper.find('ManageGuest');
     
@@ -35,8 +36,8 @@ describe('Staff component should render Manage component if user is signed in', 
   });
 });
 
-describe('Check In title', () => {
-  it('Check In', () => {
+describe('Check In', () => {
+  it('Check In title', () => {
     const wrapper = shallow(<CheckIn />);
     const text = wrapper.find('h1.checkin-page-title').text();
     

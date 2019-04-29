@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Manage Guest snapshot Snapshot 1`] = `
+exports[`Manage Guest Component Manage Guest snapshot 1`] = `
 <div
   className="manage-guests-page"
 >
